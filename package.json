@@ -1,89 +1,38 @@
 {
-  "name": "peykhang",
-  "version": "0.1.0",
+  "name": "app",
   "private": true,
-  "dependencies": {
-    "@ant-design/icons": "^5.2.6",
-    "@apollo/client": "^3.8.2",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@tinymce/tinymce-react": "^4.3.2",
-    "@types/jest": "^27.5.2",
-    "@types/lodash": "^4.14.197",
-    "@types/node": "^16.18.47",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "antd": "^5.8.5",
-    "apollo-boost": "^0.4.9",
-    "apollo-client": "^2.6.10",
-    "concurrently": "^8.2.1",
-    "graphql": "^16.8.0",
-    "json-loader": "^0.5.7",
-    "less": "^4.2.0",
-    "less-loader": "^11.1.3",
-    "less-watch-compiler": "^1.16.3",
-    "lodash": "^4.17.21",
-    "react": "^18.2.0",
-    "react-barcode": "^1.4.6",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^5.2.2",
-    "web-vitals": "^2.1.4"
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.3",
+    "@graphql-codegen/typescript": "^4.1.1",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "esbuild": "^0.24.0"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"less-watch-compiler --config less-watcher.config.json\" \"react-scripts start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "eslint": "eslint src/**",
-    "prettier": "prettier --write .",
-    "codegen": "graphql-codegen",
-    "postinstall": "yarn run build"
+    "gen-schema": "bundle exec rails graphql:schema:idl",
+    "clean:generated": "rm -rf app/javascript/generated",
+    "gen-types": "yarn clean:generated && graphql-codegen --config codegen.ts",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.jpeg=file --loader:.jpg=file --loader:.png=file"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "main": "index.js",
-  "repository": "git@github.com:Tendol/peykhang.git",
-  "license": "MIT",
-  "devDependencies": {
-    "@graphql-codegen/cli": "^5.0.0",
-    "@graphql-codegen/client-preset": "^4.1.0",
-    "@graphql-typed-document-node/core": "^3.2.0",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-config-standard-with-typescript": "^39.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.33.2",
-    "prettier": "3.0.3"
-  },
-  "engines": {
-    "node": "18.16.0",
-    "npm": "9.5.1",
-    "yarn": "1.22.19"
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "@graphql-codegen/near-operation-file-preset": "^3.0.0",
+    "@graphql-codegen/typescript-operations": "^4.3.1",
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.12",
+    "@rails/actiontext": "^8.0.0",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.7.7",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "antd": "^5.21.5",
+    "apollo-client": "^2.6.10",
+    "graphql": "^16.9.0",
+    "lodash": "^4.17.21",
+    "react": "^18.3.1",
+    "react-barcode": "^1.5.3",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "trix": "^2.1.8",
+    "typescript": "^5.6.3"
   }
 }
