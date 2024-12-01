@@ -1,0 +1,12 @@
+{:uriI"îfile://app/assets/builds/application.css.map?type=application/css-sourcemap+json&id=4cfd080823dd2aae020f02f26b959b9d0b4a8817629f23a11733224ea8ebeb23:ET:load_pathI"app/assets/builds;T:filenameI"*app/assets/builds/application.css.map;T:	nameI"application;T:logical_pathI"application.css.map;T:content_typeI"#application/css-sourcemap+json;T:sourceI"{
+  "version": 3,
+  "sources": ["../../javascript/components/BookDetail/BookDetail.css"],
+  "sourcesContent": [".ant-descriptions .ant-descriptions-item-label::after {\n    content: '';\n  }\n  .ant-descriptions .ant-descriptions-item-container .ant-descriptions-item-label {\n    padding: 0 !important;\n    margin-inline: 0 !important;\n  }\n  /*# sourceMappingURL=BookDetail.css.map */"],
+  "mappings": ";AAAA,CAAC,iBAAiB,CAAC,2BAA2B;AAC1C,WAAS;AACX;AACA,CAHD,iBAGmB,CAAC,gCAAgC,CAHlC;AAIf,WAAS;AACT,iBAAe;AACjB;",
+  "names": []
+}
+;T:metadata{
+:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"\processors:type=application/css-sourcemap+json&file_type=application/css-sourcemap+json;TTI"8file-digest://app/assets/builds/application.css.map;TTF:charsetI"
+utf-8;F:digest"%´S ·eÙidtWéuÔÎŒxOC¶W¸–LAn':lengthi:environment_versionI"1.0;T:dependencies_digest"%ÒŸû∞òH‡¿bBín≤~dù]ÔŒ¡≥ug¸‡hóô´:idI"E4cfd080823dd2aae020f02f26b959b9d0b4a8817629f23a11733224ea8ebeb23;F
